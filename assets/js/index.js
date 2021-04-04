@@ -39,6 +39,7 @@ const obj2 = {divan: 'black'};
 const link1 = obj1;
 
 console.log(obj1 === obj2); //false
+console.log(link1 === obj2); //false
 console.log(obj1 === link1); //true
 
 link1.table = "brown";
