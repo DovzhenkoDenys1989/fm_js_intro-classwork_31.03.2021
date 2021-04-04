@@ -22,10 +22,19 @@ const testArr = [];
 console.log(userTels);
 console.log(arr);
 
-const myArrayProto = {};
-myArrayProto.push = function push(item){
-  this[this.length++] = item;
-  return this.length;
+
+
+function MyArrayProto(){
+  this.push = function push(item){
+    this[this.length++] = item;
+    return this.length;
+  }
+  this.pop = function pop(){
+    const lastValue = this[this.length-1];
+    delete this[--this.length];
+    return lastValue;
+  }
+   
 }
 
 function MyArray(){
@@ -33,7 +42,7 @@ function MyArray(){
 
 }
 
-MyArray.prototype = myArrayProto;
+MyArray.prototype = new MyArrayProto;
 
 const myArr1 = new MyArray();
 
