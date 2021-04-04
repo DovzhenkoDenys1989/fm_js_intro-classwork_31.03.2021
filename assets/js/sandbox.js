@@ -1,8 +1,9 @@
-function MyConstructor(){
-  if(!new.target){
-    return new MyConstructor();
+//Написать сумму произвольного количества чисел
+function getSum(){
+  let result = null;
+  for(let i = 0; i < arguments.length; i++){
+    result += +arguments[i];
   }
-  this.name = "John";
-}
 
-console.log(MyConstructor());
+  return result;
+}
