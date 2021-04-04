@@ -1,15 +1,8 @@
-function tst1(){
-
+function MyConstructor(){
+  if(!new.target){
+    return new MyConstructor();
+  }
+  this.name = "John";
 }
 
-function tst2(){
-  return;
-}
-
-function tst3(){
-  return undefined;
-}
-
-function tst4(){
-  return false;
-}
+console.log(MyConstructor());
